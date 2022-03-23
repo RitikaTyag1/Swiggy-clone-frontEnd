@@ -1,5 +1,5 @@
 import axios from 'axios';
-import BACKEND_URL from '../../constants/apiEndpoints';
+import { BACKEND_URL } from '../../constants/apiEndpoints';
 
 const makeRequest = async (apiEndpoint, dynamicConfig = {}, navigateTo = () => {}) => {
   try {
