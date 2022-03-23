@@ -2,7 +2,7 @@
 
 .each-card{
     max-width: 600px;
-    height: 600px;
+    height: fit-content;
     display: flex;
     margin: 0 auto;
     margin-top: 20vh;
@@ -25,14 +25,33 @@
 
 .cost-for-two{
     padding-top: 0px;
-    padding-right: 50px;
+    padding-left: 200px;
     align-self: flex-end;
 }
 .card-content{
+    display: flex;
+    flex-flow: column;
     padding-left: 50px;
     padding-top: 10px;
+    
 }
 
+.inner-divs{
+    display: flex;
+}
+
+
+.view-menu-button{
+    border: 1px solid white;
+    background-color: #fc8019;
+    align-self: flex-end;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+p{
+    padding-left: 5px;
+}
 
 
 
