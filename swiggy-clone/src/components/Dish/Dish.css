@@ -1,0 +1,20 @@
+.outer-menu-container {
+  display: flex;
+  flex-direction: column;
+}
+.menu-content-container {
+  padding: 20px;
+  padding-left: 30px;
+}
+#dish-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+#dish-price {
+  color: grey;
+  margin-top: 10px;
+}
+#dish-rating {
+  color: #fc8019;
+  margin-top: 10px;
+}
