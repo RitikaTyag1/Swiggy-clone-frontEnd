@@ -1,7 +1,12 @@
-import axios from 'axios';
-import BACKEND_URL from '../../constants/apiEndpoints';
+import axios from "axios";
+import { BACKEND_URL } from "../../constants/apiEndpoints";
 
-const makeRequest = async (apiEndpoint, dynamicConfig = {}, navigateTo = () => {}) => {
+const makeRequest = async (
+  apiEndpoint,
+  dynamicConfig = {},
+  // eslint-disable-next-line comma-dangle
+  navigateTo = () => {}
+) => {
   try {
     const response = await axios({
       ...apiEndpoint,
@@ -13,9 +18,11 @@ const makeRequest = async (apiEndpoint, dynamicConfig = {}, navigateTo = () => {
     return response.data;
   } catch (err) {
     switch (err.response?.status) {
-      case 400: navigateTo('/badRequest');
+      case 400:
+        navigateTo("/badRequest");
         break;
-      default: navigateTo('/somethingWrong');
+      default:
+        navigateTo("/somethingWrong");
     }
     return [];
   }
