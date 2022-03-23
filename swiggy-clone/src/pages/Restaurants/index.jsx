@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import INITIAL_DUMMY_DATA from '../../constants/mocks/dummyData';
-import Cards from '../../components/Card';
+import Card from '../../components/Card';
 import './Restaurants.css';
 import Header from '../../components/Header';
 import { GET_RESTAURANTS_ENDPOINT } from '../../constants/apiEndpoints';
@@ -21,10 +20,11 @@ function Restaurants() {
       <ul className="all-cards-container">
         {responseData.map((restaurant) => (
           <li key={restaurant.id}>
-            <Cards
+            <Card
               fullName={restaurant.fullName}
               Location={restaurant.Location}
               costForTwo={restaurant.costForTwo}
+              restaurantId={restaurant.id}
             />
           </li>
         ))}

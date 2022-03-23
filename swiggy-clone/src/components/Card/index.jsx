@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import './Card.css';
 import { FaRupeeSign } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { RESTAURANTS_MENU_ROUTE } from '../../constants/routes';
 
-function Cards({ fullName, Location, costForTwo }) {
+function Card({
+  fullName, Location, costForTwo, restaurantId,
+}) {
   const navigate = useNavigate();
   return (
     <div className="each-card">
@@ -23,7 +24,7 @@ function Cards({ fullName, Location, costForTwo }) {
           <button
             className="view-menu-button"
             type="submit"
-            onClick={() => navigate('RESTAURANTS_MENU_ROUTE')}
+            onClick={() => navigate(`/restaurants/${restaurantId}`)}
           >
             View Menu
             {' '}
@@ -41,14 +42,15 @@ function Cards({ fullName, Location, costForTwo }) {
     </div>
   );
 }
-export default Cards;
+export default Card;
 
-Cards.defaultProps = {
+Card.defaultProps = {
   fullName: 'Sample restaurant',
 };
 
-Cards.propTypes = {
+Card.propTypes = {
   fullName: PropTypes.string,
   Location: PropTypes.string.isRequired,
   costForTwo: PropTypes.number.isRequired,
+  restaurantId: PropTypes.number.isRequired,
 };
