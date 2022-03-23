@@ -8,14 +8,16 @@ import makeRequest from '../../utils/makeRequest';
 
 function Restaurants() {
   const [responseData, setResponseData] = useState([]);
+
   useEffect(() => {
     makeRequest(GET_RESTAURANTS_ENDPOINT).then((restaurantData) => {
       setResponseData(restaurantData);
     });
   }, []);
+
   return (
     <div>
-      <Header />
+      <Header setResponseData={setResponseData} />
       <ul className="all-cards-container">
         {responseData.map((restaurant) => (
           <li key={restaurant.id}>
