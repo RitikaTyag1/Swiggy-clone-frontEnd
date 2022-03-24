@@ -23,13 +23,22 @@ function Menu() {
   }, []);
 
   return (
-    <div className="all-dishes-container">
-      {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-      <h1 id="menu-title">Menu for Restaurant {restaurantId}</h1>
-      {dishes?.map((dish) => (
-        <Dish dish={dish} key={dish.id} />
-      ))}
-    </div>
+    <>
+      <div className="header">
+        <img
+          className="swiggy-logo"
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Swiggy_logo.svg/1200px-Swiggy_logo.svg.png"
+          alt="swiggyLogo"
+        />
+      </div>
+      <div className="all-dishes-container">
+        {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
+        <h1 id="menu-title">Menu for Restaurant {restaurantId}</h1>
+        {dishes?.map((dish) => (
+          <Dish dish={dish} key={dish.id} />
+        ))}
+      </div>
+    </>
   );
 }
 
